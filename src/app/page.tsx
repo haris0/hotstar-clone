@@ -7,7 +7,6 @@ import { getTopRated } from "@/repositories/getTopRates";
 import { getTrandingMovie } from "@/repositories/getTrendingMovie";
 import { getTrandingTv } from "@/repositories/getTrendingTv";
 import { getFullPosterUrl } from "@/repositories/constants";
-import { useState } from "react";
 import AccordionContent from "@/components/accordion-content";
 
 export default async function Home() {

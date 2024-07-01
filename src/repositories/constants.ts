@@ -4,7 +4,10 @@ export const basePosterURL = 'https://image.tmdb.org/t/p/w220_and_h330_face/';
 
 export const getFullBgUrl = (path: string) => `${baseBgURL}${path}`;
 export const getFullPosterUrl = (path: string) => `${basePosterURL}${path}`;
-export const headers = {
-  accept: 'application/json',
-  Authorization: `Bearer ${process.env.MDB_TOKEN}`
+export const fetchOptions = {
+  headers: {
+    accept: 'application/json',
+    Authorization: `Bearer ${process.env.MDB_TOKEN}`
+  },
+  next: { revalidate: 3600 }
 }

@@ -1,4 +1,4 @@
-import { baseURL, headers } from "../constants";
+import { baseURL, fetchOptions } from "../constants";
 import { TopRatesRes } from "./type";
 import { Movie } from "@/models/movie";
 import { Tv } from "@/models/tv";
@@ -7,8 +7,8 @@ export async function getTopRated(): Promise<TopRatesRes> {
   const urlMovie = `${baseURL}/movie/top_rated?language=en-US&page=1`;
   const urlTv = `${baseURL}/tv/top_rated?language=en-US&page=1`;
   const [resMovie, resTv] = await Promise.all([
-    fetch(urlMovie, { headers }),
-    fetch(urlTv, { headers }),
+    fetch(urlMovie, fetchOptions),
+    fetch(urlTv, fetchOptions),
   ]) 
 
   if (!resMovie.ok || !resTv.ok) {
