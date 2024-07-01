@@ -1,4 +1,4 @@
-import { Movie } from "@/app/models/movie";
+import { Movie } from "@/models/movie";
 
 interface TopRate extends Movie {
   media_type: 'movie' | 'tv';

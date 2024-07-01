@@ -9,7 +9,7 @@ import styles from "./navbar.module.css";
 export const Navbar = () => {
   const pathname = usePathname();
   return (
-    <aside>
+    <aside className={styles.aside}>
       <div className={styles.logo_container}>
         <Image alt='home' src='/icons/logo.png' width="48" height="48" className={styles.icon}/>
       </div>

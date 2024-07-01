@@ -1,4 +1,4 @@
-import { Tv } from "@/app/models/tv";
+import { Tv } from "@/models/tv";
 
 export interface TrendingTv {
   page: number;

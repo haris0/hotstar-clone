@@ -1,7 +1,7 @@
 import { baseURL, headers } from "../constants";
 import { TopRatesRes } from "./type";
-import { Movie } from "@/app/models/movie";
-import { Tv } from "@/app/models/tv";
+import { Movie } from "@/models/movie";
+import { Tv } from "@/models/tv";
 
 export async function getTopRated(): Promise<TopRatesRes> {
   const urlMovie = `${baseURL}/movie/top_rated?language=en-US&page=1`;
