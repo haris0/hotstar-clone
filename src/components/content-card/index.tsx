@@ -21,7 +21,6 @@ const ContentCard = ({title, overview, imageUrl}: ContentCardProps) => {
           blurDataURL={imageUrl}
           alt={title}
           sizes="100vw"
-          objectFit="cover"
           fill
           className={styles.image}
         />
