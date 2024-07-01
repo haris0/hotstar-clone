@@ -11,7 +11,7 @@ export const Navbar = () => {
   return (
     <aside className={styles.aside}>
       <div className={styles.logo_container}>
-        <Image alt='home' src='/icons/logo.png' width="48" height="48" className={styles.icon}/>
+        <Image alt='home' src='/icons/logo.png' width="48" height="48"/>
       </div>
       <nav className={styles.nav_container}>
         <Link href='/search'>

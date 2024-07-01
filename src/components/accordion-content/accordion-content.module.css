@@ -1,0 +1,28 @@
+.toprated_container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.button_show {
+  border: .5px solid #2e2e2e;
+  width: 164px;
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 480px) {
+  .button_show {
+    border: .5px solid #2e2e2e;
+    width: 140px;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}

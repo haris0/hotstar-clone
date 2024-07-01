@@ -26,7 +26,15 @@
 
 .overview {
   opacity: .75;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   max-width: 32rem;
+}
+
+.max_four_line {
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 4; 
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
