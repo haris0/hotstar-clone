@@ -32,8 +32,7 @@ const Banner = ({
       className={styles.banner}
       style={{
         backgroundImage: `
-          linear-gradient( rgba(0, 0, 0, 0.6), 
-          rgba(0, 0, 0, 0.6) ), 
+          linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,0) 100%), 
           url(${getFullBgUrl(movies?.[bannerIdx]?.backdrop_path)})
         `,
         transition: 'background-image 2s linear',
