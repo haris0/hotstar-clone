@@ -1,0 +1,43 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 48px 48px 48px 84px;
+}
+
+.search_input {
+  width: 80%;
+  height: 46px;
+  line-height: 46px;
+  font-size: 1.1em;
+  border: 1px solid rgba(0,0,0,.125) !important;
+  color: rgba(0,0,0,0.5);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 50px 10px 20px;
+  color: white;
+  align-self: center;
+  margin-bottom: 32px;
+}
+
+.section_title {
+  margin-bottom: 20px;
+  border-left: 5px solid white;
+  padding-left: 10px;
+}
+
+.placehold {
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+}
+
+@media only screen and (max-width: 480px) {
+  .main {
+    padding: 24px 24px 24px 84px;
+  }
+
+  .search_input {
+    width: 100%;
+  }
+}

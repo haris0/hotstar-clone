@@ -1,13 +1,12 @@
 import styles from "./page.module.css";
 
 import Banner from "@/components/banner";
-import ContentCard from "@/components/content-card";
+import AccordionContent from "@/components/accordion-content";
 
 import { getTopRated } from "@/repositories/getTopRates";
 import { getTrandingMovie } from "@/repositories/getTrendingMovie";
 import { getTrandingTv } from "@/repositories/getTrendingTv";
 import { getFullPosterUrl } from "@/repositories/constants";
-import AccordionContent from "@/components/accordion-content";
 
 export default async function Home() {
   const topRates = await getTopRated();

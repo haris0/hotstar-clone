@@ -6,6 +6,7 @@ import { Tv } from "@/models/tv";
 export async function getTopRated(): Promise<TopRatesRes> {
   const urlMovie = `${baseURL}/movie/top_rated?language=en-US&page=1`;
   const urlTv = `${baseURL}/tv/top_rated?language=en-US&page=1`;
+  // @note: using Promise all to do paralel fetching
   const [resMovie, resTv] = await Promise.all([
     fetch(urlMovie, fetchOptions),
     fetch(urlTv, fetchOptions),

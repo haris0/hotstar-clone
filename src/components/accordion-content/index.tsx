@@ -21,7 +21,7 @@ const AccordionContent = ({ contents, initShow = 15 }: AccordionContentProps) =>
           {...content}
         />
       ))}
-      {showCount === initShow && (
+      {contents.length > showCount && showCount === initShow && (
         <button 
           onClick={() => setShowCount(contents.length)}
           className={styles.button_show}

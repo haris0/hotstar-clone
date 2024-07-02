@@ -1,5 +1,11 @@
 import { useState, useEffect } from 'react';
 
+/**
+ *
+ * @param query media query on string, ex: (max-width: 480px)
+ * @returns boolean that represent is media query fit
+ */
+
 export function useMediaQuery(query: string) {
   const [matches, setMatches] = useState(false);
 

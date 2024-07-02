@@ -5,6 +5,8 @@ import styles from "./content-card.module.css";
 import Image from 'next/image';
 import { useState } from "react";
 
+const placeholdImage = (title: string) => `https://placehold.co/260x400?text=${title}`;
+
 export interface ContentCardProps {
   id: number;
   title: string;
@@ -24,11 +26,11 @@ const ContentCard = ({title, overview, imageUrl}: ContentCardProps) => {
     >
       <div className={styles.image_container}>
         <Image
-          src={imageUrl}
+          src={imageUrl || placeholdImage(title)}
           placeholder="blur"
-          blurDataURL={imageUrl}
+          blurDataURL={imageUrl || placeholdImage(title)}
           alt={title}
-          sizes="100vw"
+          sizes="auto"
           fill
           className={styles.image}
         />
@@ -36,9 +38,9 @@ const ContentCard = ({title, overview, imageUrl}: ContentCardProps) => {
             className={styles.hoverd_card}
             style={{
               opacity: isHovering ? 1 : 0,
-              backgroundImage: `
+              backgroundImage:`
                 linear-gradient(0deg, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 10%, rgba(255,255,255,0) 100%), 
-                url(${imageUrl})
+                url(${imageUrl || placeholdImage(title)})
               `,
             }}
           >
