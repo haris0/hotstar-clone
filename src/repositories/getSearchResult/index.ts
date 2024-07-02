@@ -26,7 +26,7 @@ export const getSearchResult = async (query: string, page: number = 1): Promise<
   const tvJson = await resTv.json();
 
   return {
-    movies: movieJson.results,
-    tvs: tvJson.results
+    movies: movieJson.results.map((movie: Movie) => ({...movie, media_type: 'movie'})),
+    tvs: tvJson.results.map((tv: Tv) => ({...tv, media_type: 'tv'}))
   };
 };

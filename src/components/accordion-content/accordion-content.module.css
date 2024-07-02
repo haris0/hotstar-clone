@@ -12,6 +12,7 @@
 .button_show {
   border: .5px solid #2e2e2e;
   width: 164px;
+  min-height: 35px;
   border-radius: 10px;
   background-color: transparent;
   cursor: pointer;
@@ -19,10 +20,6 @@
 
 @media only screen and (max-width: 480px) {
   .button_show {
-    border: .5px solid #2e2e2e;
     width: 140px;
-    border-radius: 10px;
-    background-color: transparent;
-    cursor: pointer;
   }
 }

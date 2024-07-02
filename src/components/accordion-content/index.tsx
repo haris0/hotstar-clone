@@ -2,16 +2,17 @@
 
 import { useState } from "react";
 
-import ContentCard, { ContentCardProps } from "../content-card";
+import ContentCard from "../content-card";
 import styles from './accordion-content.module.css';
+import { Content } from "@/models/content";
 
 interface AccordionContentProps {
-  contents: ContentCardProps[];
+  contents: Content[];
   initShow?: number;
 }
 
-const AccordionContent = ({ contents, initShow = 15 }: AccordionContentProps) => {
-  const [showCount, setShowCount] = useState(initShow);
+const AccordionContent = ({ contents, initShow }: AccordionContentProps) => {
+  const [showCount, setShowCount] = useState(initShow || contents.length);
 
   return (
     <div className={styles.toprated_container}>

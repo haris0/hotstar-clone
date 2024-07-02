@@ -31,7 +31,8 @@ export default async function Home() {
               imageUrl: getFullPosterUrl(top.poster_path),
               mediaType: top.media_type,
             }))
-          } 
+          }
+          initShow={15}
         />
         
         <h3 className={styles.section_title}>Top Rated Movie of the week</h3>
