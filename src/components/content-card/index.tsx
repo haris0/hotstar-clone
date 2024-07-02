@@ -3,7 +3,8 @@
 import styles from "./content-card.module.css";
 
 import Image from 'next/image';
-import { useState } from "react";
+import Link from 'next/link'
+import { useState, MouseEvent } from "react";
 
 const placeholdImage = (title: string) => `https://placehold.co/260x400?text=${title}`;
 
@@ -13,10 +14,23 @@ export interface ContentCardProps {
   overview: string;
   imageUrl: string;
   mediaType: string;
+  onClickWatchlist?: (content: Omit<ContentCardProps, 'onClickWatchlist'>) => void;
 }
 
-const ContentCard = ({title, overview, imageUrl}: ContentCardProps) => {
+const ContentCard = ({id, title, overview, imageUrl, mediaType, onClickWatchlist}: ContentCardProps) => {
   const [isHovering, setIsHovering] = useState(false);
+
+  const handleClickWatchlist = (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+    onClickWatchlist?.({
+      id,
+      title,
+      overview,
+      imageUrl,
+      mediaType
+    });
+  }
   
   return (
     <div 
@@ -34,7 +48,8 @@ const ContentCard = ({title, overview, imageUrl}: ContentCardProps) => {
           fill
           className={styles.image}
         />
-          <div 
+        <Link href={`/${mediaType}/${id}`}>
+          <div
             className={styles.hoverd_card}
             style={{
               opacity: isHovering ? 1 : 0,
@@ -46,10 +61,14 @@ const ContentCard = ({title, overview, imageUrl}: ContentCardProps) => {
           >
             <div className={styles.hover_content}>
               <h3 className={styles.title}>{title}</h3>
-              <button className={styles.watchlist_button}>+ Add To Watchlist</button>
+              <button 
+                className={styles.watchlist_button}
+                onClick={handleClickWatchlist}
+              >+ Add To Watchlist</button>
               <p className={styles.overview}>{overview}</p>
             </div>
           </div>
+        </Link>
       </div>
       <div className={styles.inline_title}>
         <b>{title}</b>
