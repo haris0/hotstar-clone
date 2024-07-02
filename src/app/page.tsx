@@ -23,30 +23,44 @@ export default async function Home() {
         <h3 className={styles.section_title}>
           Top Rated Movies & TV Series
         </h3>
-        <AccordionContent contents={topRates.results} />
+        <AccordionContent 
+          contents={
+            topRates.results.map(top => ({
+              id: top.id,
+              title: top.title,
+              overview: top.overview,
+              imageUrl: getFullPosterUrl(top.poster_path),
+              mediaType: top.media_type,
+            }))
+          } 
+        />
         
         <h3 className={styles.section_title}>Top Rated Movie of the week</h3>
-        <div className={styles.scroll_view}>
-          {trandingMovies?.results?.map((movie) => (
-            <ContentCard
-              key={movie.id}
-              title={movie.title}
-              overview={movie.overview}
-              imageUrl={getFullPosterUrl(movie.poster_path)}
-            />
-          ))}
-        </div>
+        <AccordionContent 
+          contents={
+            trandingMovies.results.map(movie => ({
+              id: movie.id,
+              title: movie.title,
+              overview: movie.overview,
+              imageUrl: getFullPosterUrl(movie.poster_path),
+              mediaType: movie.media_type,
+            }))
+          } 
+          initShow={7}
+        />
         <h3 className={styles.section_title}>Top Rated TV Series of the week</h3>
-        <div className={styles.scroll_view}>
-          {trandingTvs?.results?.map((tv) => (
-            <ContentCard
-              key={tv.id}
-              title={tv.name}
-              overview={tv.overview}
-              imageUrl={getFullPosterUrl(tv.poster_path)}
-            />
-          ))}
-        </div>
+        <AccordionContent 
+          contents={
+            trandingTvs.results.map(tv => ({
+              id: tv.id,
+              title: tv.name,
+              overview: tv.overview,
+              imageUrl: getFullPosterUrl(tv.poster_path),
+              mediaType: tv.media_type,
+            }))
+          } 
+          initShow={7}
+        />
       </div>
     </main>
   );

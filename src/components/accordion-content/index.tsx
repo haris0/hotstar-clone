@@ -1,32 +1,27 @@
 'use client'
 
 import { useState } from "react";
-import { Movie } from "@/models/movie";
-import { getFullPosterUrl } from "@/repositories/constants";
 
-import ContentCard from "../content-card";
+import ContentCard, { ContentCardProps } from "../content-card";
 import styles from './accordion-content.module.css';
 
 interface AccordionContentProps {
-  contents: Movie[];
+  contents: ContentCardProps[];
+  initShow?: number;
 }
 
-const SHOW_LESS = 15;
-
-const AccordionContent = ({ contents }: AccordionContentProps) => {
-  const [showCount, setShowCount] = useState(SHOW_LESS);
+const AccordionContent = ({ contents, initShow = 15 }: AccordionContentProps) => {
+  const [showCount, setShowCount] = useState(initShow);
 
   return (
     <div className={styles.toprated_container}>
-      {contents?.slice(0, showCount).map((movie) => (
+      {contents?.slice(0, showCount).map((content) => (
         <ContentCard
-          key={movie.id} 
-          title={movie.title}
-          overview={movie.overview}
-          imageUrl={getFullPosterUrl(movie.poster_path)}
+          key={content.id} 
+          {...content}
         />
       ))}
-      {showCount === SHOW_LESS && (
+      {showCount === initShow && (
         <button 
           onClick={() => setShowCount(contents.length)}
           className={styles.button_show}

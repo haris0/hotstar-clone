@@ -37,7 +37,6 @@ const Banner = ({
           linear-gradient(${isMobile ? '0deg' : '90deg'}, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,0) 100%), 
           url(${getFullBgUrl(movies?.[bannerIdx]?.backdrop_path)})
         `,
-        transition: 'background-image 2s linear',
       }}
     >
       <div>
