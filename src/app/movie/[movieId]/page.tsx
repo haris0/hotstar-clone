@@ -1,11 +1,20 @@
-import React from 'react';
+import { getMovieDetail } from "@/repositories/getMovieDetail";
+import styles from "./page.module.css";
 
-const MovieDetail = ({ params }: { params: { movieId: string } }) => {
+const MovieDetail = async ({ params }: { params: { movieId: string } }) => {
   const { movieId } = params;
+  const detail = await getMovieDetail(movieId);
+
   return (
-    <div>
-      MovieDetail {movieId}
-    </div>
+    <main>
+      <div className={styles.banner}>
+        Banner
+      </div>
+      <div className={styles.content}>
+        Content
+        {JSON.stringify(detail)}
+      </div>
+    </main>
   );
 };
 

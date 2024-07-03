@@ -1,0 +1,23 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.banner {
+  width: 100%;
+  padding: 0px 0px 0px 64px;
+}
+
+.content {
+  width: 100%;
+  padding: 48px 48px 48px 84px;
+}
+
+@media only screen and (max-width: 480px) {
+  .content {
+    padding: 24px 24px 24px 84px;
+  }
+}
+
