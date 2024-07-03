@@ -33,19 +33,6 @@ export interface Keyword {
   name: string;
 }
 
-export interface Video {
-  iso_639_1: string;
-  iso_3166_1: string;
-  name: string;
-  key: string;
-  site: string;
-  size: number;
-  type: string;
-  official: boolean;
-  published_at: Date;
-  id: string;
-}
-
 export interface CreatedBy {
   id: number;
   credit_id: string;
@@ -55,7 +42,7 @@ export interface CreatedBy {
 }
 
 export interface LastEpisodeToAir {
-  air_date: Date;
+  air_date: string;
   episode_number: number;
   id: number;
   name: string;
@@ -75,7 +62,7 @@ export interface Network {
 }
 
 export interface Season {
-  air_date: Date;
+  air_date: string;
   episode_count: number;
   id: number;
   name: string;
@@ -88,13 +75,13 @@ export interface TvDetail {
   backdrop_path: string;
   created_by: CreatedBy[];
   episode_run_time: number[];
-  first_air_date: Date;
+  first_air_date: string;
   genres: Genre[];
   homepage: string;
   id: number;
   in_production: boolean;
   languages: string[];
-  last_air_date: Date;
+  last_air_date: string;
   last_episode_to_air: LastEpisodeToAir;
   name: string;
   next_episode_to_air: null;
@@ -118,6 +105,5 @@ export interface TvDetail {
   vote_count: number;
   keywords?: Keyword[];
   sosial_media?: SocialMedia;
-  videos?: Video[];
   recommendations?: Tv[];
 }

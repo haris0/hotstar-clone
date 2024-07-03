@@ -1,0 +1,62 @@
+.tab_container {
+  display: flex;
+  overflow-x: auto;
+}
+
+.tab_container > * {
+  flex: 0 0 auto;
+}
+
+.tab_button {
+  border-radius: 5px;
+  border: 1px solid white;
+  background: transparent;
+  cursor: pointer;
+  margin-right: 10px;
+  width: fit-content;
+  padding: 10px 20px;
+}
+
+.tab_active {
+  background-color: white;
+  color: black;
+}
+
+.episodes_container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.episode_container {
+  width: 48%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.image {
+  border-radius: 5px;
+}
+
+.overview {
+  opacity: .5;
+  font-size: 14px;
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 3; 
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+@media only screen and (max-width: 480px) {
+  .episodes_container {
+    flex-direction: column;
+  }
+  
+  .episode_container {
+    width: 100%;
+  }
+}

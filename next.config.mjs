@@ -9,6 +9,9 @@ const nextConfig = {
       {
         hostname: "placehold.co",
       },
+      {
+        hostname: "media.themoviedb.org",
+      },
     ],
   },
 };

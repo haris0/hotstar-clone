@@ -68,22 +68,29 @@ const MovieDetail = async ({ params }: { params: { movieId: string } }) => {
               />
             </div>
           </div>
-          <h4 className={styles.section_title}>Keyword</h4>
-          <div className={styles.keyword_container}>
-            {detail.keywords?.map((keyword) => (
-              <span key={keyword.id} className={styles.tag}>{keyword.name}</span>
-            ))}
-          </div>
+          {detail.keywords && detail.keywords.length > 0 && (
+            <>
+              <h4 className={styles.section_title}>Keyword</h4>
+              <div className={styles.keyword_container}>
+                {detail.keywords.map((keyword) => (
+                  <span key={keyword.id} className={styles.tag}>{keyword.name}</span>
+                ))}
+              </div>
+            </>
+          )}
           <h3 className={styles.section_title}>Overview</h3>
           <div className={styles.tagline}>{detail.tagline}</div>
           <p>{detail.overview}</p>
         </div>
-        <div>
-          <h3 className={styles.section_title}>Trailer</h3>
-          <div className={styles.trailer_container}>
-            <YoutubeEmbed embedid={officialTrailer?.key || ''} />
+        {officialTrailer?.key && (
+          <div>
+            <h3 className={styles.section_title}>Trailer</h3>
+            <br />
+            <div className={styles.trailer_container}>
+              <YoutubeEmbed embedid={officialTrailer.key || ''} />
+            </div>
           </div>
-        </div>
+        )}
         {detail.recommendations && detail.recommendations.length > 0 && (
           <div className={styles.recomm}>
             <h3 className={styles.section_title}>Recommendation</h3>
