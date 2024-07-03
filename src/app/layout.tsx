@@ -7,7 +7,7 @@ import WatchlistContextProvider from "@/context/WatchlistContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "99 Hotstar",
+  title: "Hotstar 123",
   description: "Discover your amazing movies",
 };
 

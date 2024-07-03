@@ -5,31 +5,13 @@ import styles from "./content-card.module.css";
 
 import Image from 'next/image';
 import Link from 'next/link'
-import { useState, MouseEvent } from "react";
-import { useWatchlistContext } from "@/context/WatchlistContext";
+import { useState } from "react";
+import WatchlistButton from "../watchlist-button";
 
 const placeholdImage = (title: string) => `https://placehold.co/260x400?text=${title}`;
 
 const ContentCard = ({ id, title, overview, imageUrl, mediaType }: Content) => {
   const [isHovering, setIsHovering] = useState(false);
-  const { addWatchlist, removeWatchlist, checkWatchlist } = useWatchlistContext();
-  const isAdded = checkWatchlist(id);
-
-  const handleClickWatchlist = (event: MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    event.stopPropagation();
-    if(isAdded) {
-      removeWatchlist(id);
-    } else {
-      addWatchlist({
-        id,
-        title,
-        overview,
-        imageUrl,
-        mediaType
-      })
-    }
-  }
   
   return (
     <div 
@@ -60,12 +42,7 @@ const ContentCard = ({ id, title, overview, imageUrl, mediaType }: Content) => {
             >
               <div className={styles.hover_content}>
                 <h3 className={styles.title}>{title}</h3>
-                <button 
-                  className={styles.watchlist_button}
-                  onClick={handleClickWatchlist}
-                >
-                  {isAdded ? '√ Added to watchlist' : '+ Add to watchlist'}
-                </button>
+                  <WatchlistButton content={{ id, title, overview, imageUrl, mediaType }} />
                 <p className={styles.overview}>{overview}</p>
               </div>
             </div>
