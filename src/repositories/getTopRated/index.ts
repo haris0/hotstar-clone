@@ -21,6 +21,9 @@ export async function getTopRated(): Promise<TopRatesRes> {
  
   return {
     page: movieJson.page,
-    results: []
+    results: [
+      ...movieJson.results.map((movie: Movie) => ({...movie, media_type: 'movie'})),
+      ...tvJson.results.map((tv: Tv) => ({...tv, title: tv.name, media_type: 'tv'}))
+    ]
   };
 }

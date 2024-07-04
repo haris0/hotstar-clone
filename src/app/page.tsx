@@ -9,7 +9,7 @@ import { getTrendingTv } from "@/repositories/getTrendingTv";
 import { getFullPosterUrl } from "@/repositories/constants";
 
 export default async function Home() {
-  const topRates = await getTopRated();
+  const topRated = await getTopRated();
   const trandingMovies = await getTrendingMovie();
   const trandingTvs = await getTrendingTv();
 
@@ -24,7 +24,7 @@ export default async function Home() {
         </h3>
         <AccordionContent 
           contents={
-            topRates.results.map(top => ({
+            topRated.results.map(top => ({
               id: top.id,
               title: top.title,
               overview: top.overview,

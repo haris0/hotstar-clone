@@ -68,17 +68,19 @@
   width: 40%;
 }
 
+@media only screen and (max-width: 980px) {
+  .trailer_container {
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 480px) {
   .content {
-    padding: 24px 24px 24px 84px;
+    padding: 16px 16px 16px 72px;
   }
 
   .banner {
     height: 10rem;
-  }
-
-  .trailer_container {
-    width: 100%;
   }
 
   .header_container {
