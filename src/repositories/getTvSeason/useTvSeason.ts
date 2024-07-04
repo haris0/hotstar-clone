@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { TvSeason } from "./type";
 import { getTvSeason } from ".";
 
-export const useTvSeson = (prams: {tvId: string, seasonNumber: string}) => {
+export const useTvSeason = (prams: {tvId: string, seasonNumber: string}) => {
   const [data, setData] = useState<TvSeason>();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<unknown>();

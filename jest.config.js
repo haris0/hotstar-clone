@@ -17,12 +17,12 @@ const config = {
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
 
   moduleNameMapper: {
-    "^@/components/(.*)$": "<rootDir>/components/$1",
-    "^@/context/(.*)$": "<rootDir>/context/$1",
-    "^@/helpers/(.*)$": "<rootDir>/helpers/$1",
-    "^@/hooks/(.*)$": "<rootDir>/hooks/$1",
-    "^@/models/(.*)$": "<rootDir>/models/$1",
-    "^@/repositories/(.*)$": "<rootDir>/repositories/$1",
+    "^@/components/(.*)$": "<rootDir>/src/components/$1",
+    "^@/context/(.*)$": "<rootDir>/src/context/$1",
+    "^@/helpers/(.*)$": "<rootDir>/src/helpers/$1",
+    "^@/hooks/(.*)$": "<rootDir>/src/hooks/$1",
+    "^@/models/(.*)$": "<rootDir>/src/models/$1",
+    "^@/repositories/(.*)$": "<rootDir>/src/repositories/$1",
   },
 
   testEnvironment: "jsdom",

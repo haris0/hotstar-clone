@@ -15,7 +15,7 @@ const AccordionContent = ({ contents, initShow }: AccordionContentProps) => {
   const [showCount, setShowCount] = useState(initShow || contents.length);
 
   return (
-    <div className={styles.toprated_container}>
+    <div className={styles.accordion_container}>
       {contents?.slice(0, showCount).map((content) => (
         <ContentCard
           key={content.id} 

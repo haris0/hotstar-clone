@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from 'next/image';
 import { Season } from "@/repositories/getTvDetail/type";
 import styles from "./seasons-tab.module.css";
-import { useTvSeson } from "@/repositories/getTvSeason/useTvSeason";
+import { useTvSeason } from "@/repositories/getTvSeason/useTvSeason";
 import { getFullEpsImageUrl } from "@/repositories/constants";
 import { convertDate } from "@/helpers/convertDate";
 import { convertMinsToHrsMins } from "@/helpers/convertMinsToHrsMins";
@@ -18,7 +18,7 @@ const placeholdImage = (title: string) => `https://placehold.co/227x127?text=${t
 
 const SeasonsTabs = ({ tvId, seasons }: SeasonsTabsProps) => {
   const [selectedSeason, setSelectedSeason] = useState(seasons[0].season_number);
-  const { data } = useTvSeson({ tvId,  seasonNumber: String(selectedSeason)});
+  const { data } = useTvSeason({ tvId,  seasonNumber: String(selectedSeason)});
 
   return (
     <div>

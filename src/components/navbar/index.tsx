@@ -9,15 +9,15 @@ import styles from "./navbar.module.css";
 export const Navbar = () => {
   const pathname = usePathname();
   return (
-    <aside className={styles.aside}>
+    <aside className={styles.aside} data-testid='navbar'>
       <div className={styles.logo_container}>
-        <Image alt='home' src='/icons/logo.png' width="48" height="48"/>
+        <Image alt='logo' src='/icons/logo.png' width="48" height="48"/>
       </div>
       <nav className={styles.nav_container}>
         <Link href='/search'>
           <div className={styles.icon_container}>
             <Image 
-              alt='home' 
+              alt='search' 
               src='/icons/search.png' 
               width="18" 
               height="18" 
@@ -39,7 +39,7 @@ export const Navbar = () => {
         <Link href='/watchlist'>
           <div className={styles.icon_container}>
             <Image 
-              alt='home' 
+              alt='watchlist' 
               src='/icons/bookmark.png' 
               width="18" 
               height="18"

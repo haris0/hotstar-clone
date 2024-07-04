@@ -31,7 +31,7 @@ const Banner = ({
   }, [movies.length]);
 
   return (
-    <Link href={`/${movies?.[bannerIdx].media_type}/${movies?.[bannerIdx].id}`}>
+    <Link href={`/${movies?.[bannerIdx]?.media_type}/${movies?.[bannerIdx]?.id}`}>
       <div
         className={styles.banner}
         style={{
