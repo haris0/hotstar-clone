@@ -42,7 +42,7 @@ const ContentCard = ({ id, title, overview, imageUrl, mediaType }: Content) => {
             >
               <div className={styles.hover_content}>
                 <h3 className={styles.title}>{title}</h3>
-                  <WatchlistButton content={{ id, title, overview, imageUrl, mediaType }} />
+                <WatchlistButton content={{ id, title, overview, imageUrl, mediaType }} />
                 <p className={styles.overview}>{overview}</p>
               </div>
             </div>

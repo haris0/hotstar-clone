@@ -6,6 +6,7 @@ import { Movie } from '@/models/movie';
 import { getFullBgUrl } from '@/repositories/constants';
 import { getYear } from '@/helpers/getYear';
 import { useMediaQuery } from '@/hooks/useMeduaQuery';
+import Link from 'next/link';
 
 type props = {
   movies: Movie[];
@@ -30,21 +31,23 @@ const Banner = ({
   }, [movies.length]);
 
   return (
-    <div
-      className={styles.banner}
-      style={{
-        backgroundImage: `
-          linear-gradient(${isMobile ? '0deg' : '90deg'}, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 40%, rgba(255,255,255,0) 100%), 
-          url(${getFullBgUrl(movies?.[bannerIdx]?.backdrop_path)})
-        `,
-      }}
-    >
-      <div>
-        <h2>{movies?.[bannerIdx]?.title}</h2>
-        <p className={`${styles.overview} ${isMobile ? styles.max_four_line : ''}`}>{movies?.[bannerIdx]?.overview}</p>
-        <b >{getYear(movies?.[bannerIdx]?.release_date || '')}</b> 
+    <Link href={`/${movies?.[bannerIdx].media_type}/${movies?.[bannerIdx].id}`}>
+      <div
+        className={styles.banner}
+        style={{
+          backgroundImage: `
+            linear-gradient(${isMobile ? '0deg' : '90deg'}, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 40%, rgba(255,255,255,0) 100%), 
+            url(${getFullBgUrl(movies?.[bannerIdx]?.backdrop_path)})
+          `,
+        }}
+      >
+        <div>
+          <h2>{movies?.[bannerIdx]?.title}</h2>
+          <p className={`${styles.overview} ${isMobile ? styles.max_four_line : ''}`}>{movies?.[bannerIdx]?.overview}</p>
+          <b >{getYear(movies?.[bannerIdx]?.release_date || '')}</b> 
+        </div>
       </div>
-    </div>
+    </Link>
   )
 };
 
