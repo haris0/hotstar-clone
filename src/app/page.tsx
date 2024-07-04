@@ -3,15 +3,15 @@ import styles from "./page.module.css";
 import Banner from "@/components/banner";
 import AccordionContent from "@/components/accordion-content";
 
-import { getTopRated } from "@/repositories/getTopRates";
-import { getTrandingMovie } from "@/repositories/getTrendingMovie";
-import { getTrandingTv } from "@/repositories/getTrendingTv";
+import { getTopRated } from "@/repositories/getTopRated";
+import { getTrendingMovie } from "@/repositories/getTrendingMovie";
+import { getTrendingTv } from "@/repositories/getTrendingTv";
 import { getFullPosterUrl } from "@/repositories/constants";
 
 export default async function Home() {
   const topRates = await getTopRated();
-  const trandingMovies = await getTrandingMovie();
-  const trandingTvs = await getTrandingTv();
+  const trandingMovies = await getTrendingMovie();
+  const trandingTvs = await getTrendingTv();
 
   return (
     <main className={styles.main}>

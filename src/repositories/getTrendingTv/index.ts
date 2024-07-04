@@ -1,7 +1,7 @@
 import { baseURL, fetchOptions } from "../constants";
 import { TrendingTv } from "./type";
 
-export async function getTrandingTv(): Promise<TrendingTv> {
+export async function getTrendingTv(): Promise<TrendingTv> {
   const urlTv = `${baseURL}/trending/tv/week?language=en-US`;
   const res = await fetch(urlTv, fetchOptions)
 

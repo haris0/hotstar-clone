@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import { getMovieDetail } from "@/repositories/getMovieDetail";
 import { getFullBgUrl, getFullPosterUrl } from "@/repositories/constants";
 import { convertDate } from "@/helpers/convertDate";
