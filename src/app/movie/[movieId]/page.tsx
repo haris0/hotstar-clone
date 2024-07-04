@@ -1,5 +1,6 @@
 import styles from "./page.module.css";
 
+import { Metadata, ResolvingMetadata } from "next";
 import { getMovieDetail } from "@/repositories/getMovieDetail";
 import { getFullBgUrl, getFullPosterUrl } from "@/repositories/constants";
 import { convertDate } from "@/helpers/convertDate";
@@ -8,7 +9,40 @@ import AccordionContent from "@/components/accordion-content";
 import YoutubeEmbed from "@/components/youtube/YoutubeEmbed";
 import WatchlistButton from "@/components/watchlist-button";
 
-const MovieDetail = async ({ params }: { params: { movieId: string } }) => {
+interface MovieDetailProps { 
+  params: { 
+    movieId: string 
+  }
+}
+ 
+export async function generateMetadata(
+  { params }: MovieDetailProps
+): Promise<Metadata> {
+  const { movieId } = params;
+  const detail = await getMovieDetail(movieId);
+
+  const title = `${detail.title} - Hotstar123`;
+  const imageFull = getFullPosterUrl(detail.poster_path);
+ 
+  return {
+    title,
+    description: detail.overview,
+    openGraph: {
+      title,
+      type: 'website',
+      description: detail.overview,
+      images: imageFull,
+    },
+    twitter: {
+      title,
+      card: 'summary_large_image',
+      description: detail.overview,
+      images: imageFull,
+    }
+  }
+}
+
+const MovieDetail = async ({ params }: MovieDetailProps) => {
   const { movieId } = params;
   const detail = await getMovieDetail(movieId);
   

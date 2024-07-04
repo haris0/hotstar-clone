@@ -5,8 +5,42 @@ import { convertDate } from "@/helpers/convertDate";
 import WatchlistButton from "@/components/watchlist-button";
 import AccordionContent from "@/components/accordion-content";
 import SeasonsTabs from "@/components/seasons-tab";
+import { Metadata } from "next";
 
-const TvDetail = async ({ params }: { params: { tvId: string } }) => {
+interface TvDetailProps { 
+  params: { 
+    tvId: string 
+  }
+}
+
+export async function generateMetadata(
+  { params }: TvDetailProps
+): Promise<Metadata> {
+  const { tvId } = params;
+  const detail = await getTvDetail(tvId);
+
+  const title = `${detail.name} - Hotstar123`;
+  const imageFull = getFullPosterUrl(detail.poster_path);
+ 
+  return {
+    title,
+    description: detail.overview,
+    openGraph: {
+      title,
+      type: 'website',
+      description: detail.overview,
+      images: imageFull,
+    },
+    twitter: {
+      title,
+      card: 'summary_large_image',
+      description: detail.overview,
+      images: imageFull,
+    }
+  }
+}
+
+const TvDetail = async ({ params }: TvDetailProps) => {
   const { tvId } = params;
   const detail = await getTvDetail(tvId);
 
