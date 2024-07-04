@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hotstar123
 
-## Getting Started
+This app show movie, and tv show in entertainment, you can check detail for each content, search for content, and save your watchlist movie or tv show. The data is provided by [Themoviedb](https://www.themoviedb.org/). You can check the deployed app on [Hotstar123]().
 
-First, run the development server:
+## Local Setup
+
+### Get Themoviedb API key
+
+To running this web you need to get api key from Themoviedb, this key will be used for fetching data. Go to [https://developer.themoviedb.org/](https://developer.themoviedb.org/) to get your key.
+
+### Setup env variable
+
+After you get the key, you need set this key on env variable, create file on project root called ".env.local", and put the key:
+
+```bash
+NEXT_PUBLIC_MDB_TOKEN={your-key}
+```
+
+### Install dependencies
+
+Before you ready to run the web, you need install all required dependencies, by run this command on root of project:
+
+```bash
+npm run install
+```
+
+### Run the web
+
+And thats all, now you ready to run the web, hit this command:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Preview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Home
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+| Desktop              | Mobile               |
+| -------------------- | -------------------- |
+| ![page1](./ss_1.png) | ![page2](./ss_2.png) |
 
-## Learn More
+### Watchlist
 
-To learn more about Next.js, take a look at the following resources:
+| Desktop              | Mobile               |
+| -------------------- | -------------------- |
+| ![page3](./ss_3.png) | ![page4](./ss_4.png) |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Search
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+| Desktop              | Mobile               |
+| -------------------- | -------------------- |
+| ![page5](./ss_5.png) | ![page6](./ss_6.png) |
 
-## Deploy on Vercel
+### Movie Detail
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Desktop              | Mobile               |
+| -------------------- | -------------------- |
+| ![page7](./ss_7.png) | ![page8](./ss_8.png) |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Tv Detail
+
+| Desktop              | Mobile                 |
+| -------------------- | ---------------------- |
+| ![page8](./ss_9.png) | ![page10](./ss_10.png) |
+
+## Technologies
+
+This project uses several technologies listed below :
+
+- **[NextJs](https://nextjs.org/docs)**, the React Framework for Production.
+- **[Typescript](https://www.typescriptlang.org/)**, a strict syntactical superset of JavaScript and adds optional static typing to the language.
+- **[React Context](https://reactjs.org/docs/context.html)**, context lets you “broadcast” such data, and changes to it, to all components below.
