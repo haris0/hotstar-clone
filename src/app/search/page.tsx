@@ -1,6 +1,6 @@
 'use client'
 
-import { ChangeEvent, useCallback, useEffect, useState } from "react";
+import { ChangeEvent, useCallback, useEffect, useState, Suspense } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useDebounce } from "@/hooks/useDebounce";
 import styles from "./page.module.css";
@@ -97,4 +97,12 @@ const Search = () => {
   );
 };
 
-export default Search;
+const SearchPage = () => {
+  return (
+    <Suspense>
+      <Search />
+    </Suspense>
+  )
+}
+
+export default SearchPage;
