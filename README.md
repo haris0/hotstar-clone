@@ -18,7 +18,7 @@ NEXT_PUBLIC_MDB_TOKEN={your-key}
 
 ### Install dependencies
 
-Before you ready to run the web, you need install all required dependencies, by run this command on root of project:
+Before you ready to run the web, you need install all required dependencies, use **Node.js 18.17 or later**. run this command on root of project:
 
 ```bash
 npm run install
