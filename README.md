@@ -1,6 +1,6 @@
 # Hotstar123
 
-This app show movie, and tv show in entertainment, you can check detail for each content, search for content, and save your watchlist movie or tv show. The data is provided by [Themoviedb](https://www.themoviedb.org/). You can check the deployed app on [Hotstar123]().
+This app show movie, and tv show in entertainment, you can check detail for each content, search for content, and save your watchlist movie or tv show. The data is provided by [Themoviedb](https://www.themoviedb.org/). You can check the deployed app on [Hotstar123](https://hotstar123-clone.vercel.app/).
 
 ## Local Setup
 
